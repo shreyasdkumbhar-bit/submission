@@ -1,0 +1,50 @@
+GreenLCC India - run it on your own PC (about 5 minutes the first time)
+======================================================================
+The tool runs locally in your web browser (http://localhost:8501). Nothing is uploaded anywhere.
+
+WHAT YOU NEED
+  * Python 3.10 or newer (https://www.python.org/downloads/ - tick "Add python.exe to PATH")
+  * Internet on the first run only (installs packages). No API key needed.
+
+WINDOWS
+  1. Unzip the folder to a SHORT path, e.g. C:\GreenLCC (long paths can break the install).
+  2. Double-click  Start_GreenLCC.bat
+     First run: sets up a private environment (3-5 min). Later runs start in seconds.
+  3. Your browser opens the app. Keep the black window open; close it to stop.
+  4. Closed the tab by mistake? Double-click "Open GreenLCC in browser.url" while the black window is still open.
+
+macOS / LINUX
+     sh start_greenlcc.sh        (then open the address printed in the terminal)
+
+MANUAL (any system)
+     python -m venv .venv
+     Windows:  .venv\Scripts\activate     macOS/Linux:  source .venv/bin/activate
+     pip install -r requirements.txt
+     python launcher.py
+
+TRY IT (the Home page also lists "Things to try")
+  * Hover over any dotted-underlined term (MARR, present worth, EUAC, Monte Carlo ...) to see what it is,
+    why the tool uses it and how. Tab / tap also opens them.
+  1. Home -> "Try the Pune demo", then use the Next buttons: Set up, Recommendation, Can we trust it?, Report.
+  2. Change the target level in the sidebar, drag the sliders on Recommendation.
+  3. Recommendation -> "How it works": the five steps and the hand-check.
+  4. Report: preview and download the PDF and Excel files.
+  Own data: Home -> download the input workbook, edit it, open it again from Home.
+
+OPTIONAL AI
+  The only AI feature inside the tool polishes the memo wording on the Report page. It needs
+  pip install -r requirements-ai.txt  and the ANTHROPIC_API_KEY environment variable. Without it a built-in
+  template is used and everything works offline. All numbers come from fixed formulas, never from AI.
+
+CHECK THE MATHS (optional, ~1 min)
+     .venv\Scripts\python -m pytest tests -q        (81 tests)
+
+PROBLEMS
+  * "python is not recognised": reinstall Python with "Add to PATH" ticked.
+  * Browser did not open: go to the address printed in the black window.
+  * Port busy: the app picks the next free port and updates the .url shortcut automatically.
+  * Install error about a missing file / long path: move the folder to a shorter path, delete .venv, run again.
+
+FILES
+  docs/1_About_the_Tool.pdf, docs/2_User_Guide.pdf, docs/3_How_the_Tool_Works.pdf,
+  docs/GreenLCC_Glossary.pdf (every term), docs/PROJECT_LOG.md

@@ -1,0 +1,2 @@
+# Optional: Claude polish of the owner memo (also set ANTHROPIC_API_KEY)
+anthropic==2.3.0
